@@ -1,0 +1,260 @@
+{% extends 'core/base.html' %}
+<!--  -->
+{% block wf_page %}5d248c622758aede1b30bc56{% endblock %}
+<!--  -->
+{% block wf_site %}5d00a5e0ec9646414d2a961e{% endblock %}
+<!--  -->
+{% block title %}{{property.name}}{% endblock %}
+<!--  -->
+
+{% block content %}
+
+
+<div id="main" style="background-image:url('/media/{{ property.images.first.image }}')" class="section-property-inner">
+    <div class="container upper inner-property-item w-container">
+        <div class="section-property-inner-content">
+            <div class="property-item-top-id inner">
+                <div class="property-item-top-id-label">ID</div>
+                <div class="property-item-top-id-value">{{ property.reference }}</div>
+            </div>
+            <div class="property-item-top-price inner">
+                <div class="property-item-top-price-label">€</div>
+                <div class="property-item-top-price-value">{{ property.price }}</div>
+            </div>
+            <h1 class="section-property-inner-name">{{ property.name }}</h1>
+            <div class="property-item-info-location inner">
+                <div class="property-item-info-location-icon inner"></div>
+                <div class="property-item-info-location-value inner">{{ property.city }}</div>
+            </div>
+        </div>
+        <div class="property-item-info-wrapper inner">
+            <div class="property-item-info-item">
+                <div class="property-item-info-item-top">
+                    <div class="property-item-info-item-top-icon-bedrooms inner"></div>
+                    <div class="property-item-info-item-value inner">{{ property.bedrooms }}</div>
+                </div>
+                <div class="property-item-info-item-label inner">Bedrooms</div>
+            </div>
+            <div class="property-item-info-item">
+                <div class="property-item-info-item-top">
+                    <div class="property-item-info-item-top-icon-bathrooms inner"></div>
+                    <div class="property-item-info-item-value inner">{{ property.bathrooms }}</div>
+                </div>
+                <div class="property-item-info-item-label inner">Bathrooms</div>
+            </div>
+            <div class="property-item-info-item">
+                <div class="property-item-info-item-top">
+                    <div class="property-item-info-item-top-icon-square inner"></div>
+                    <div class="property-item-info-item-value inner">{{ property.area }}</div>
+                    <div class="property-item-info-item-value-metrs inner">m<em class="property-item-info-item-metric">2</em></div>
+                </div>
+                <div class="property-item-info-item-label inner">Square</div>
+            </div>
+        </div>
+    </div>
+    <div class="background-overlay"></div>
+</div>
+<div class="section-property-content">
+    <div class="container w-container">
+        <div class="section-property-grid">
+            <div id="w-node-_47bab04e-35fe-8263-899f-e6b8326f3a4d-1b30bc56" class="sticky-navigation-block">
+                <div class="input-label">Property navigation</div>
+                <div class="sticky-navigation"><a href="#main" class="sticky-navigation-link input-text">Main information</a><a href="#gallery" class="sticky-navigation-link input-text">Gallery</a><a href="#general" class="sticky-navigation-link input-text">General information</a>
+                    <a href="#details" class="sticky-navigation-link input-text">Details</a><a href="#maps" class="sticky-navigation-link input-text sticky-navigation-latest-link">Map</a><a href="#" class="button book wide w-button">Book now</a></div>
+            </div>
+            <div id="w-node-_0d358bcf-2e89-41c4-994c-555ade1eaa3c-1b30bc56" class="property-data">
+                <div id="gallery" class="property-data-gallery">
+                    <h2 class="property-data-blocks-header">Gallery</h2>
+                    <div class="property-gallery">
+                        <a href="#" id="w-node-a8f4e1eb-685a-3ecd-0069-6a7ab236e901-1b30bc56" style="background-image:url('/media/{{property.images.first.image}}')" class="lightbox-main w-inline-block w-lightbox">
+                            <script type="application/json" class="w-json">
+                                {
+                                    "items": [{
+                                        "url": "/media/{{property.images.first.image}}",
+                                        "type": "image"
+                                    }],
+                                    "group": "gallery"
+                                }
+                            </script>
+                        </a>
+                        <div id="w-node-a8f4e1eb-685a-3ecd-0069-6a7ab236e902-1b30bc56" class="collection-list-gallery w-dyn-list">
+                            <script type="text/x-wf-template" id="wf-template-a8f4e1eb-685a-3ecd-0069-6a7ab236e903">%3Cdiv%20role%3D%22listitem%22%20class%3D%22collection-item-gallery%20w-dyn-item%20w-dyn-repeater-item%20w-col%20w-col-6%22%3E%3Ca%20href%3D%22%23%22%20style%3D%22background-image%3Aurl(%26quot%3Bhttps%3A%2F%2Fuploads-ssl.webflow.com%2F5d00a5e0ec9646339b2a962a%2F5d397e9aeeeaad102e0d4f93_g_yoooi604s7zxev8brsfi.jpg%26quot%3B)%22%20class%3D%22lightbox-gallery-item%20w-inline-block%20w-lightbox%22%3E%3Cscript%20type%3D%22application%2Fjson%22%20class%3D%22w-json%22%3E%7B%0A%20%20%22items%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22url%22%3A%20%22https%3A%2F%2Fuploads-ssl.webflow.com%2F5d00a5e0ec9646339b2a962a%2F5d397e9aeeeaad102e0d4f93_g_yoooi604s7zxev8brsfi.jpg%22%2C%0A%20%20%20%20%20%20%22type%22%3A%20%22image%22%0A%20%20%20%20%7D%0A%20%20%5D%2C%0A%20%20%22group%22%3A%20%22gallery%22%0A%7D%3C%2Fscript%3E%3C%2Fa%3E%3C%2Fdiv%3E</script>
+                            <div role="list" class="w-dyn-items w-row">
+
+                                {% for image in property.images.all|slice:"1:" %}
+                                <div role="listitem" class="collection-item-gallery w-dyn-item w-dyn-repeater-item w-col w-col-6">
+                                    <a href="#" style="background-image:url(&quot;{{ image.image.url }}&quot;)" class="lightbox-gallery-item w-inline-block w-lightbox">
+                                        <script type="application/json" class="w-json">
+                                            {
+                                                "items": [{
+                                                    "url": "/media/{{ image.image }}",
+                                                    "type": "image"
+                                                }],
+                                                "group": "gallery"
+                                            }
+                                        </script>
+                                    </a>
+                                </div>
+                                {% endfor %}
+
+                            </div>
+                            <div class="w-dyn-hide w-dyn-empty">
+                                <div>No items found.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="general" class="property-data-general-info">
+                    <h2 class="property-data-blocks-header">General information</h2>
+                    <div class="property-data-rich-text w-richtext">
+                        <blockquote>{{ property.general_information }}</blockquote>
+                    </div>
+                </div>
+                <div id="details" class="property-data-details">
+                    <h2 class="property-data-blocks-header">Details</h2>
+                    <div class="property-data-details-content">
+                        <div id="w-node-e4c2239a-df72-0f40-cbbe-eb319ec7a3b0-1b30bc56" class="details-content-block">
+                            <div class="details-content-block-label">Type</div>
+                            <div class="details-content-block-text">{{ property.type }}</div>
+                        </div>
+                        <div id="w-node-_545f62ed-dd52-0b34-48b8-c503daf41613-1b30bc56" class="details-content-block">
+                            <div class="details-content-block-label">Sales class</div>
+                            <div class="details-content-block-text">Some another</div>
+                        </div>
+                        <div id="w-node-f1372324-a974-b675-4d96-a5c10037576b-1b30bc56" class="details-content-block">
+                            <div class="details-content-block-label">Location</div>
+                            <div class="details-content-block-text">{{ property.city }}</div>
+                        </div>
+                        <div id="w-node-_884f47d7-08e3-1c74-ef63-af082607590f-1b30bc56" class="details-content-block">
+                            <div class="details-content-block-label">Bedrooms</div>
+                            <div class="details-content-block-text">{{ property.bedrooms }}</div>
+                        </div>
+                        <div id="w-node-e196d33e-cf06-4141-c093-b768d5627b4d-1b30bc56" class="details-content-block">
+                            <div class="details-content-block-label">Bathrooms</div>
+                            <div class="details-content-block-text">{{ property.bathrooms }}</div>
+                        </div>
+                        <div id="w-node-d74cbe85-c292-df28-9697-46a13f64202c-1b30bc56" class="details-content-block">
+                            <div class="details-content-block-label">Swimming pool</div>
+                            <div class="details-content-block-text">{% if property.swimming_pool %}Yes{% else %}No{% endif %}</div>
+                        </div>
+                        <div id="w-node-_67d8a79f-11a7-1cb3-110f-e63ba8836b25-1b30bc56" class="details-content-block">
+                            <div class="details-content-block-label">Garden</div>
+                            <div class="details-content-block-text">{% if property.swimming_pool %}Yes{% else %}No{% endif %}</div>
+                        </div>
+                        <div id="w-node-_839e1cae-6ce7-3aef-871f-e83df0ce9463-1b30bc56" class="details-content-block">
+                            <div class="details-content-block-label">Parking</div>
+                            <div class="details-content-block-text">{% if property.swimming_pool %}Yes{% else %}No{% endif %}</div>
+                        </div>
+                        <div id="w-node-e7889e52-021b-4d92-65b4-b47708662794-1b30bc56" class="details-content-block">
+                            <div class="details-content-block-label">Coast</div>
+                            <div class="details-content-block-text"> Costa Blanca South</div>
+                        </div>
+                        <div id="w-node-_1c0d03e0-c967-62f4-6a5a-fea284cadcc2-1b30bc56" class="details-content-block">
+                            <div class="details-content-block-label">Property area</div>
+                            <div class="details-content-block-meters">
+                                <div class="details-content-block-text">136</div>
+                                <div class="property-item-info-item-value-metrs inner in-content">m<em class="property-item-info-item-metric">2</em></div>
+                            </div>
+                        </div>
+                        <div id="w-node-ee205330-84f5-9265-95f4-11e6ba74ef04-1b30bc56" class="details-content-block">
+                            <div class="details-content-block-label">Distance to the sea</div>
+                            <div class="details-content-block-meters">
+                                <div class="details-content-block-text">{{ property.distance_to_sea }}</div>
+                                <div class="property-item-info-item-value-metrs inner in-content">m</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="maps" class="property-data-map">
+                    <h2 class="property-data-blocks-header">Map</h2>
+                    <div class="map-wrapper">
+                        <div class="embed-map w-embed w-script">
+                            <div id='map'></div>
+                            <style>
+                                #map {
+                                    position: absolute;
+                                    top: 0;
+                                    bottom: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                                
+                                .marker {
+                                    background-image: url('https://assets.website-files.com/5ce7fd869dad450588ee4df9/5cee80f5f39ac07cd3207464_Map%20pin.svg');
+                                    background-size: cover;
+                                    width: 48px;
+                                    height: 48px;
+                                    cursor: pointer;
+                                }
+                            </style>
+                            <script>
+                                var long = -5.641833,
+                                    lat = 36.863236;
+                                mapboxgl.accessToken = 'pk.eyJ1IjoiZGxlbmNvZGUiLCJhIjoiY2pwMTZ2aHl0MzJhZzNra2Z1ajJ3bjk0MyJ9.eq9wfkL9E52ipirN0-JXgQ';
+                                var map = new mapboxgl.Map({
+                                    container: 'map',
+                                    style: 'mapbox://styles/dlencode/cjw93g36c2bep1cn8p6ip8zj9',
+                                    center: [long, lat],
+                                    zoom: 16,
+                                    animate: true
+                                });
+
+                                var el = document.createElement('div');
+                                el.className = 'marker';
+
+                                new mapboxgl.Marker(el).setLngLat([long, lat]).addTo(map);
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section-popular-properties inner">
+    <div class="container w-container">
+        <div class="top-of-the-block">
+            <h2 class="top-of-the-block-h2">Popular properties</h2>
+            <h3 class="top-of-the-block-h3">Checkout all our featured properties</h3><a href="/all-properties" class="button button-alternate button-block-more w-button">View all properties</a></div>
+        <div class="properties">
+            <div class="properties-list-wrapper w-dyn-list">
+                <div role="list" class="properties-list w-dyn-items w-row">
+                    {% include "partials/properties.html" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="opacity:0;display:none" class="booking-wrapper">
+    <div style="-webkit-transform:translate3d(0, 30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+        class="booking-modal">
+        <h2 class="form-header form-header-modal">From step to dream!</h2>
+        <div class="booking-title">
+            <div class="form-subheader form-subheader-modal booking-subheader">You are booking</div>
+            <div class="form-subheader form-subheader-modal booking-subheader booking-title">{{property.name}}</div>
+        </div>
+        <div class="form-block form-modal w-form">
+            <form id="email-form" name="email-form" data-name="Email Form" method="post" action="{% url 'core:submit_booking' %}" class="form">
+                {% csrf_token %}
+                <div class="form-fields">
+                    <input type="text" name="property_id" style="display: none;" value="{{property.id}}" />
+                    <input class="input w-node-_6264015a-a542-ac1f-0f70-84b0ab7db7a5-1b30bc56 w-input" maxlength="256" name="email" data-name="Email 2" placeholder="Enter your email" type="email" id="email-2" required="" />
+                    <input class="input w-node-_6264015a-a542-ac1f-0f70-84b0ab7db7a6-1b30bc56 w-input" maxlength="256" name="name" data-name="Name 2" placeholder="Enter your name" type="text" id="name-2" required="" />
+                </div>
+                <input type="submit" data-wait="Please wait..." class="button wide w-button" value="Book now" />
+                <div class="form-terms form-terms-modal">Clicking Send you are agree with <a href="#" class="form-terms-link form-terms-link-modal">Terms and Conditions</a></div>
+            </form>
+            <div class="success-message w-form-done">
+                <div>Thank you! Your submission has been received!</div>
+            </div>
+            <div class="error-message w-form-fail">
+                <div>Oops! Something went wrong while submitting the form</div>
+            </div>
+        </div>
+        <div data-w-id="6264015a-a542-ac1f-0f70-84b0ab7db7b2" class="booking-close"></div>
+    </div>
+    <div class="w-embed"><input type="hidden" class="sourceUrl" id="sourceUrl" name="url" data-name="sourceUrl" value="https://like-my-spain.webflow.io/properties/"></div>
+</div>
+
+{% endblock %}

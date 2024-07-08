@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.7/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
+    <style>
+        .sidebar {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            transform: translateX(0);
+            opacity: 1;
+            width: 16rem;
+            display: inline-flex;
+            /* Default width for sidebar */
+        }
+        
+        .sidebar-hidden {
+            transform: translateX(-100%);
+            opacity: 0;
+            display: none;
+            width: 0;
+            /* Set width to 0 when hidden */
+        }
+        
+        .full-width {
+            transition: margin-left 0.3s ease;
+            /* Adjust margin when sidebar is visible */
+        }
+        
+        .full-width.hidden {
+            margin-left: 0;
+            /* Set margin to 0 when sidebar is hidden */
+        }
+    </style>
+
+    <style type="text/tailwindcss">.form-group label {@apply font-bold mb-2 block } .form-group { @apply mb-4 }</style>
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="bg-gray-800 text-white w-64 md:w-72 shadow-lg sidebar">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-4">Dashboard</h2>
+                <ul>
+                    <li>
+                        <a href="/dashboard" class="block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-white rounded">Home</a>
+                    </li>
+                    <li>
+                        <a href="/dashboard/properties" class="block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-white rounded">Properties</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'settings_update' %}" class="block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-white rounded">Settings</a>
+                    </li>
+                    <!-- Add more sidebar links as needed -->
+                </ul>
+                <input type="checkbox" value="synthwave" class="toggle theme-controller col-span-2 col-start-1 row-start-1 border-sky-400 bg-amber-300 [--tglbg:theme(colors.sky.500)] checked:border-blue-800 checked:bg-blue-300 checked:[--tglbg:theme(colors.blue.900)]"
+                />
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="mainContent" class="flex-1 bg-white flex flex-col full-width overflow-scroll">
+            <div class="p-4 flex justify-between items-center">
+                <div id="toggleSidebarBtn" class="select-none block hover:opacity-85 text-white p-2 rounded-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="black" class="bi bi-text-indent-left text-muted" viewBox="0 0 16 16">
+                        <path d="M2 3.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm.646 2.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L4.293 8 2.646 6.354a.5.5 0 0 1 0-.708zM7 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+                    </svg>
+                </div>
+                <img class="w-10 h-10 rounded-full" src="https://dashui.codescandy.com/dashuipro/assets/images/avatar/avatar-11.jpg" alt="">
+            </div>
+            <div class="p-4">
+                {% block content %} {% endblock %}
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const toggleSidebarBtn = document.getElementById('toggleSidebarBtn');
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('mainContent');
+
+        toggleSidebarBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('sidebar-hidden');
+            mainContent.classList.toggle('full-width');
+        });
+    </script>
+</body>
+
+</html>

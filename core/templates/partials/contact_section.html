@@ -1,0 +1,24 @@
+<div class="section-contact-form">
+    <div class="container upper container-form w-container">
+        <h2 class="form-header">Contact us. Just fill the form below</h2>
+        <div class="form-subheader">Our manager contact you within 4 working hours</div>
+        <div class="form-block w-form">
+            <form id="email-form" name="email-form" data-name="Email Form" method="post" action="{% url 'core:submit_message' %}" class="form" data-wf-page-id="5d248c622758aeba6930bc34" data-wf-element-id="86a94381-fcc3-7a6f-04b1-d953ad7a4730">
+                {% csrf_token %}
+                <div class="form-fields">
+                    <input class="input w-node-_86a94381-fcc3-7a6f-04b1-d953ad7a4732-6930bc34 w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="Enter your email" type="email" id="email-2" required="" />
+                    <input class="input w-node-_86a94381-fcc3-7a6f-04b1-d953ad7a4733-6930bc34 w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="Enter your name" type="text" id="name-2" required="" /><textarea placeholder="Message us about your expectations"
+                        maxlength="5000" id="Message" name="Message" required="" data-name="Message" class="input textarea w-node-_86a94381-fcc3-7a6f-04b1-d953ad7a4734-6930bc34 w-input"></textarea></div><input type="submit" data-wait="Please wait..." class="button wide w-button"
+                    value="Submit" />
+                <div class="form-terms">Clicking Send you are agree with <a href="#" class="form-terms-link">Terms and Conditions</a></div>
+            </form>
+            <div class="success-message w-form-done">
+                <div>Thank you! Your submission has been received!</div>
+            </div>
+            <div class="error-message w-form-fail">
+                <div>Oops! Something went wrong while submitting the form</div>
+            </div>
+        </div>
+    </div>
+    <div class="background-overlay"></div>
+</div>

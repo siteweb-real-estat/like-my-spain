@@ -1,0 +1,48 @@
+ {% for property in properties %}
+<div role="listitem" class="propties-item w-dyn-item w-col w-col-4">
+    <a data-w-id="2099cb3a-c240-daab-6b3c-6632dd0eea94" href="/property/{{ property.pk }}" class="property-item w-inline-block">
+        <div class="property-item-top">
+            <div class="property-item-top-id">
+                <div class="property-item-top-id-label">ID</div>
+                <div class="property-item-top-id-value">{{ property.reference }}</div>
+            </div>
+            <div class="property-item-top-price">
+                <div class="property-item-top-price-label">€</div>
+                <div class="property-item-top-price-value">{{ property.price }}</div>
+            </div>
+            <div style="background-image:url('/media/{{ property.images.first.image }}')" class="property-item-top-thumbnail"></div>
+        </div>
+        <div class="property-item-info">
+            <div class="property-item-info-location">
+                <div class="property-item-info-location-icon"></div>
+                <div class="property-item-info-location-value">{{ property.city }}</div>
+            </div>
+            <h3 class="property-item-info-name">{{ property.name }}</h3>
+            <div class="property-item-info-wrapper">
+                <div class="property-item-info-item">
+                    <div class="property-item-info-item-top">
+                        <div class="property-item-info-item-top-icon-bedrooms"></div>
+                        <div class="property-item-info-item-value">{{ property.bedrooms }}</div>
+                    </div>
+                    <div class="property-item-info-item-label">Bedrooms</div>
+                </div>
+                <div class="property-item-info-item">
+                    <div class="property-item-info-item-top">
+                        <div class="property-item-info-item-top-icon-bathrooms"></div>
+                        <div class="property-item-info-item-value">{{ property.bathrooms }}</div>
+                    </div>
+                    <div class="property-item-info-item-label">Bathrooms</div>
+                </div>
+                <div class="property-item-info-item">
+                    <div class="property-item-info-item-top">
+                        <div class="property-item-info-item-top-icon-square"></div>
+                        <div class="property-item-info-item-value">{{ property.area }}</div>
+                        <div class="property-item-info-item-value-metrs">m<em class="property-item-info-item-metric">2</em></div>
+                    </div>
+                    <div class="property-item-info-item-label">Square</div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+{% endfor %}

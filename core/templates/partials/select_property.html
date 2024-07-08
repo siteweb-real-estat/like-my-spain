@@ -1,0 +1,78 @@
+<div class="section-popular-properties">
+    <div class="container w-container">
+        <div class="filter">
+            <div class="filter-by-type">
+                <div class="input-label input-center">Select the type of property</div>
+                <div class="filter-by-type-filters">
+                    <div class="filter-by-type-list-wrapper w-dyn-list">
+                        <div role="list" class="filter-by-type-list w-dyn-items">
+                            <div role="listitem" class="filter-by-type-item w-dyn-item">
+                                <a href="/type/house" class="filter-by-type-filter-item w-inline-block">
+                                    <div style="background-image:url(&quot;/static/images/house-1.svg&quot;)" class="filter-by-type-filter-item-icon house"></div>
+                                    <div class="input-text">House</div>
+                                </a>
+                            </div>
+                            <div role="listitem" class="filter-by-type-item w-dyn-item">
+                                <a href="/type/apartments" class="filter-by-type-filter-item w-inline-block">
+                                    <div style="background-image:url(&quot;/static/images/apartments-1.svg&quot;)" class="filter-by-type-filter-item-icon house"></div>
+                                    <div class="input-text">Apartments</div>
+                                </a>
+                            </div>
+                            <div role="listitem" class="filter-by-type-item w-dyn-item">
+                                <a href="/type/commercial" class="filter-by-type-filter-item w-inline-block">
+                                    <div style="background-image:url(&quot;/static/images/commercial.svg&quot;)" class="filter-by-type-filter-item-icon house"></div>
+                                    <div class="input-text">Commercial</div>
+                                </a>
+                            </div>
+                            <div role="listitem" class="filter-by-type-item w-dyn-item">
+                                <a href="/type/land" class="filter-by-type-filter-item w-inline-block">
+                                    <div style="background-image:url(&quot;/static/images/land.svg&quot;)" class="filter-by-type-filter-item-icon house"></div>
+                                    <div class="input-text">Land</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-by-city">
+                <div class="input-label input-center">Or select the city</div>
+                <div class="filter-by-city-filters">
+                    <div data-delay="0" data-hover="false" class="city-dropdown w-dropdown">
+                        <div class="city-dropdown-toggle w-dropdown-toggle">
+                            <div class="city-dropdown-text">Select city</div>
+                            <div class="city-dropdown-icon"></div>
+                        </div>
+                        <nav class="city-dropdown-list w-dropdown-list">
+                            <div class="cities-list-wrapper w-dyn-list">
+                                <div role="list" class="cities-list w-dyn-items">
+                                    {% for city in request.CITY_CHOICES %}
+                                    <div role="listitem" class="city-item w-dyn-item">
+                                        <a href="/city/{{city.0}}" class="city-item-link w-inline-block">
+                                            <div> {{city.1}}</div>
+                                        </a>
+                                    </div>
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if not no_title %}
+        <div class="top-of-the-block">
+            <h2 class="top-of-the-block-h2">Popular properties</h2>
+            <h3 class="top-of-the-block-h3">Checkout all our featured properties</h3><a href="/all-properties" class="button button-alternate button-block-more w-button">View all properties</a>
+        </div>
+        {% endif %}
+
+        <div class="properties">
+            <div class="properties-list-wrapper w-dyn-list">
+                <div role="list" class="properties-list w-dyn-items w-row">
+                    {% include "partials/properties.html" %}
+                </div>
+            </div>
+            <a href="/all-properties" class="button button-alternate button-wide w-button">View all properties</a></div>
+    </div>
+</div>
