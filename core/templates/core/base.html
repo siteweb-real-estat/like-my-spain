@@ -48,6 +48,9 @@
 
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
+    <!--  -->
+    {% block head %}{% endblock %}
+
 </head>
 
 <body>
@@ -58,15 +61,11 @@
                 <img src="{% static 'images/wide-20normal.svg' %}" alt="" class="logotype-normal" />
             </a>
             <nav role="navigation" class="nav-menu w-nav-menu">
-                <div class="nav-menu-content"><a href="/all-properties" class="navbar-link w-nav-link">All properties</a><a href="/about-us" class="navbar-link w-nav-link">About us</a><a href="/contacts" class="navbar-link w-nav-link">Contacts</a>
-                    <div data-hover="true" data-delay="0" class="dropdown w-dropdown">
-                        <div class="language-toggle w-dropdown-toggle">
-                            <div class="language-toggle-text">English</div>
-                            <div class="language-toggle-icon"></div>
-                            <div class="language-toggle-icon alternative"></div>
-                        </div>
-                        <nav class="language-toggle-list w-dropdown-list"><a href="/" aria-current="page" class="language-toggle-link w-dropdown-link w--current">English</a><a href="/ru/home" class="language-toggle-link w-dropdown-link">Русский</a><a href="/esp/home" class="language-toggle-link w-dropdown-link">Español</a></nav>
-                    </div><a href="#" class="button get-in-touch navbar-cta button-wide w-button">Get in touch</a></div>
+                <div class="nav-menu-content">
+                    <a href="/all-properties" class="navbar-link w-nav-link">All properties</a>
+                    <a href="/about-us" class="navbar-link w-nav-link">About us</a>
+                    <a href="/contacts" class="navbar-link w-nav-link">Contacts</a>
+                    <a href="#" class="button get-in-touch navbar-cta button-wide w-button">Get in touch</a></div>
             </nav>
             <div class="menu-button w-nav-button">
                 <div class="menu-close"></div>

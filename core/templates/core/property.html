@@ -6,7 +6,12 @@
 <!--  -->
 {% block title %}{{property.name}}{% endblock %}
 <!--  -->
+{% block head %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<!--  -->
+{% endblock %}
 
+<!--  -->
 {% block content %}
 
 
@@ -115,11 +120,7 @@
                     <div class="property-data-details-content">
                         <div id="w-node-e4c2239a-df72-0f40-cbbe-eb319ec7a3b0-1b30bc56" class="details-content-block">
                             <div class="details-content-block-label">Type</div>
-                            <div class="details-content-block-text">{{ property.type }}</div>
-                        </div>
-                        <div id="w-node-_545f62ed-dd52-0b34-48b8-c503daf41613-1b30bc56" class="details-content-block">
-                            <div class="details-content-block-label">Sales class</div>
-                            <div class="details-content-block-text">Some another</div>
+                            <div class="details-content-block-text">{{ property.property_type }}</div>
                         </div>
                         <div id="w-node-f1372324-a974-b675-4d96-a5c10037576b-1b30bc56" class="details-content-block">
                             <div class="details-content-block-label">Location</div>
@@ -139,28 +140,21 @@
                         </div>
                         <div id="w-node-_67d8a79f-11a7-1cb3-110f-e63ba8836b25-1b30bc56" class="details-content-block">
                             <div class="details-content-block-label">Garden</div>
-                            <div class="details-content-block-text">{% if property.swimming_pool %}Yes{% else %}No{% endif %}</div>
+                            <div class="details-content-block-text">{% if property.garden %}Yes{% else %}No{% endif %}</div>
                         </div>
                         <div id="w-node-_839e1cae-6ce7-3aef-871f-e83df0ce9463-1b30bc56" class="details-content-block">
                             <div class="details-content-block-label">Parking</div>
-                            <div class="details-content-block-text">{% if property.swimming_pool %}Yes{% else %}No{% endif %}</div>
+                            <div class="details-content-block-text">{% if property.parking %}Yes{% else %}No{% endif %}</div>
                         </div>
                         <div id="w-node-e7889e52-021b-4d92-65b4-b47708662794-1b30bc56" class="details-content-block">
                             <div class="details-content-block-label">Coast</div>
-                            <div class="details-content-block-text"> Costa Blanca South</div>
+                            <div class="details-content-block-text"> {{property.city}}</div>
                         </div>
                         <div id="w-node-_1c0d03e0-c967-62f4-6a5a-fea284cadcc2-1b30bc56" class="details-content-block">
                             <div class="details-content-block-label">Property area</div>
                             <div class="details-content-block-meters">
-                                <div class="details-content-block-text">136</div>
+                                <div class="details-content-block-text">{{property.area}}</div>
                                 <div class="property-item-info-item-value-metrs inner in-content">m<em class="property-item-info-item-metric">2</em></div>
-                            </div>
-                        </div>
-                        <div id="w-node-ee205330-84f5-9265-95f4-11e6ba74ef04-1b30bc56" class="details-content-block">
-                            <div class="details-content-block-label">Distance to the sea</div>
-                            <div class="details-content-block-meters">
-                                <div class="details-content-block-text">{{ property.distance_to_sea }}</div>
-                                <div class="property-item-info-item-value-metrs inner in-content">m</div>
                             </div>
                         </div>
                     </div>

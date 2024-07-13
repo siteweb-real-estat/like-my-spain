@@ -1,4 +1,4 @@
-from dashboard.models import Setting
+from .models import Setting
 
 
 class SettingsMiddleware:

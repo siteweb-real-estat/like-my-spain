@@ -2,9 +2,7 @@ from typing import Any
 from django.http import HttpRequest
 from django.shortcuts import redirect, render, get_object_or_404
 from django.views.generic import TemplateView, ListView, DetailView
-from django.contrib import messages
-from dashboard.models import Booking, Property, Setting, Message
-from .forms import MessageForm
+from .models import Booking, Property, Setting, Message
 
 
 class Home(ListView):

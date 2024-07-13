@@ -4,7 +4,9 @@
 <!--  -->
 {% block wf_site %}5d00a5e0ec9646414d2a961e{% endblock %}
 <!--  -->
-{% block title %}Contact{% endblock %}
+{% block title %}Contact{% endblock %} {% block head %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" /> {% endblock %}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <!--  -->
 
 {% block content %}
@@ -61,7 +63,7 @@
     <div class="map-wrapper-contacts">
         <div class="map-overlay"></div>
         <div class="embed-map w-embed w-script">
-            <div id='map'></div>
+            <div id="map"></div>
             <style>
                 #map {
                     position: absolute;
@@ -83,4 +85,9 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    var map = L.map('map').setView([51.505, -0.09], 13);
+</script>
 {% endblock %}
