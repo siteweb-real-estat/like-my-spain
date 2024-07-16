@@ -29,6 +29,7 @@ class Property(models.Model):
         choices=PROPERTY_TYPE_CHOICES,
     )
     city = models.CharField(max_length=50, choices=CITY_CHOICES, default="Madrid")
+    address = models.CharField(max_length=255, null=True)
     general_information = models.TextField()
     bedrooms = models.IntegerField()
     bathrooms = models.IntegerField()

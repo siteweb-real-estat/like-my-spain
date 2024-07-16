@@ -1,4 +1,4 @@
-{% extends 'core/base.html' %}
+{% extends 'core/base.html' %} {% load static %}
 <!--  -->
 {% block wf_page %}5d248c622758aede1b30bc56{% endblock %}
 <!--  -->
@@ -7,7 +7,26 @@
 {% block title %}{{property.name}}{% endblock %}
 <!--  -->
 {% block head %}
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<style>
+    #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .marker {
+        background-size: cover;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+    }
+    
+    .leaflet-top.leaflet-left {
+        z-index: 0;
+    }
+</style>
 <!--  -->
 {% endblock %}
 
@@ -123,7 +142,7 @@
                             <div class="details-content-block-text">{{ property.property_type }}</div>
                         </div>
                         <div id="w-node-f1372324-a974-b675-4d96-a5c10037576b-1b30bc56" class="details-content-block">
-                            <div class="details-content-block-label">Location</div>
+                            <div class="details-content-block-label">City</div>
                             <div class="details-content-block-text">{{ property.city }}</div>
                         </div>
                         <div id="w-node-_884f47d7-08e3-1c74-ef63-af082607590f-1b30bc56" class="details-content-block">
@@ -146,10 +165,6 @@
                             <div class="details-content-block-label">Parking</div>
                             <div class="details-content-block-text">{% if property.parking %}Yes{% else %}No{% endif %}</div>
                         </div>
-                        <div id="w-node-e7889e52-021b-4d92-65b4-b47708662794-1b30bc56" class="details-content-block">
-                            <div class="details-content-block-label">Coast</div>
-                            <div class="details-content-block-text"> {{property.city}}</div>
-                        </div>
                         <div id="w-node-_1c0d03e0-c967-62f4-6a5a-fea284cadcc2-1b30bc56" class="details-content-block">
                             <div class="details-content-block-label">Property area</div>
                             <div class="details-content-block-meters">
@@ -157,48 +172,16 @@
                                 <div class="property-item-info-item-value-metrs inner in-content">m<em class="property-item-info-item-metric">2</em></div>
                             </div>
                         </div>
+                        <div id="w-node-f1372324-a974-b675-4d96-a5c10037576b-1b30bc56" class="details-content-block">
+                            <div class="details-content-block-label">Address</div>
+                            <div class="details-content-block-text">{{ property.address }}</div>
+                        </div>
                     </div>
                 </div>
                 <div id="maps" class="property-data-map">
                     <h2 class="property-data-blocks-header">Map</h2>
                     <div class="map-wrapper">
-                        <div class="embed-map w-embed w-script">
-                            <div id='map'></div>
-                            <style>
-                                #map {
-                                    position: absolute;
-                                    top: 0;
-                                    bottom: 0;
-                                    width: 100%;
-                                    height: 100%;
-                                }
-                                
-                                .marker {
-                                    background-image: url('https://assets.website-files.com/5ce7fd869dad450588ee4df9/5cee80f5f39ac07cd3207464_Map%20pin.svg');
-                                    background-size: cover;
-                                    width: 48px;
-                                    height: 48px;
-                                    cursor: pointer;
-                                }
-                            </style>
-                            <script>
-                                var long = -5.641833,
-                                    lat = 36.863236;
-                                mapboxgl.accessToken = 'pk.eyJ1IjoiZGxlbmNvZGUiLCJhIjoiY2pwMTZ2aHl0MzJhZzNra2Z1ajJ3bjk0MyJ9.eq9wfkL9E52ipirN0-JXgQ';
-                                var map = new mapboxgl.Map({
-                                    container: 'map',
-                                    style: 'mapbox://styles/dlencode/cjw93g36c2bep1cn8p6ip8zj9',
-                                    center: [long, lat],
-                                    zoom: 16,
-                                    animate: true
-                                });
-
-                                var el = document.createElement('div');
-                                el.className = 'marker';
-
-                                new mapboxgl.Marker(el).setLngLat([long, lat]).addTo(map);
-                            </script>
-                        </div>
+                        <iframe id="map" src="https://maps.google.com/maps?q={{property.address}}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"></iframe>
                     </div>
                 </div>
             </div>
@@ -250,5 +233,4 @@
     </div>
     <div class="w-embed"><input type="hidden" class="sourceUrl" id="sourceUrl" name="url" data-name="sourceUrl" value="https://like-my-spain.webflow.io/properties/"></div>
 </div>
-
 {% endblock %}

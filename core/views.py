@@ -10,18 +10,21 @@ class Home(ListView):
     model = Property
     context_object_name = "properties"
 
-
 class PropertyDetailView(DetailView):
+    template_name = 'core/property.html'
     model = Property
-    template_name = "core/property.html"
-    context_object_name = "property"
+    context_object_name = 'property'
 
+    def get_object(self, queryset=None):
+        reference = self.kwargs.get('reference')  # Extract the reference from URL kwargs
+        obj = Property.objects.get(reference=reference)  # Fetch the property by reference
+        return obj
+    
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        context["properties"] = Property.objects.all()
+        context["properties"] = Property.objects.all()[:3]
         return context
-
-
+    
 class AllProperties(ListView):
     template_name = "core/all-properties.html"
     model = Property

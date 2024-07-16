@@ -26,8 +26,8 @@
             n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
         }(window, document);
     </script>
-    <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon" />
-    <link href="images/app-icon.png" rel="apple-touch-icon" />
+    <link href="{% static 'images/favicon.png' %}" rel="shortcut icon" type="image/x-icon" />
+    <link href="{% static 'images/app-icon.png' %}" rel="apple-touch-icon" />
     <style>
         textarea {
             resize: none;
