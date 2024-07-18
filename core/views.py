@@ -1,9 +1,11 @@
+import os
 from typing import Any
-from django.http import HttpRequest
+from django.conf import settings
+from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect, render, get_object_or_404
 from django.views.generic import TemplateView, ListView, DetailView
 from .models import Booking, Property, Setting, Message
-
+from django.core import management
 
 class Home(ListView):
     template_name = "core/index.html"
@@ -89,3 +91,26 @@ def submit_booking(request: HttpRequest):
         property = get_object_or_404(Property, pk=property_id)
         booking = Booking.objects.create(email=email, name=name, property=property)
         return redirect("/success")
+
+
+def download_backup(request):
+    # Define paths to backup files
+    db_backup_file = os.path.join(settings.BASE_DIR, 'backup.json')
+
+    # Create a new database backup
+    management.call_command('dumpdata', '--output', db_backup_file)
+    
+    # Serve the backup JSON file for download
+    if os.path.exists(db_backup_file):
+        with open(db_backup_file, 'rb') as f:
+            response = HttpResponse(f.read(), content_type='application/json')
+            response['Content-Disposition'] = 'attachment; filename=backup.json'
+            
+            
+            return response
+    else:
+        return HttpResponse("Backup file not found", status=404)
+    
+
+# def handler404(request, *args, **argv):
+#     return render(request, 'core/404.html', {})

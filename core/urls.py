@@ -13,4 +13,5 @@ urlpatterns = [
     path("submit-booking/", views.submit_booking, name="submit_booking"),
     path("type/<type>/", views.PropertyListByType.as_view(), name="property_type"),
     path("city/<str:city>/", views.PropertyListByCity.as_view(), name="property_city"),
+    path('download-backup/', views.download_backup, name='download_backup'),
 ]
