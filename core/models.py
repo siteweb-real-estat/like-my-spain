@@ -8,16 +8,26 @@ PROPERTY_TYPE_CHOICES = [
 ]
 
 CITY_CHOICES = [
-    ("Madrid", "Madrid"),
-    ("Barcelona", "Barcelona"),
-    ("Valencia", "Valencia"),
-    ("Seville", "Seville"),
-    ("Bilbao", "Bilbao"),
-    ("Malaga", "Malaga"),
-    ("Granada", "Granada"),
-    ("Alicante", "Alicante"),
-    ("Cordoba", "Cordoba"),
-    ("Zaragoza", "Zaragoza"),
+    ("Casablanca", "Casablanca"),
+    ("Rabat", "Rabat"),
+    ("Fes", "Fes"),
+    ("Marrakesh", "Marrakesh"),
+    ("Tangier", "Tangier"),
+    ("Agadir", "Agadir"),
+    ("Meknes", "Meknes"),
+    ("Oujda", "Oujda"),
+    ("Tetouan", "Tetouan"),
+    ("Kenitra", "Kenitra"),
+    ("Safi", "Safi"),
+    ("Nador", "Nador"),
+    ("Beni Mellal", "Beni Mellal"),
+    ("Taza", "Taza"),
+    ("Laayoune", "Laayoune"),
+    ("Dakhla", "Dakhla"),
+    ("Essaouira", "Essaouira"),
+    ("El Jadida", "El Jadida"),
+    ("Settat", "Settat"),
+    ("Mohammedia", "Mohammedia"),
 ]
 
 
@@ -28,7 +38,7 @@ class Property(models.Model):
         max_length=50,
         choices=PROPERTY_TYPE_CHOICES,
     )
-    city = models.CharField(max_length=50, choices=CITY_CHOICES, default="Madrid")
+    city = models.CharField(max_length=50, choices=CITY_CHOICES, default="Casablanca")
     address = models.CharField(max_length=255, null=True)
     general_information = models.TextField()
     bedrooms = models.IntegerField()

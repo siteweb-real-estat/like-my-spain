@@ -4,15 +4,7 @@
         <div class="footer-grid">
             <div id="w-node-e3b1643d-fa42-646c-909e-617bfd14e780-6930bc34" class="footer-general">
                 <a href="#" class="logotype logotype-footer w-nav-brand"><img src="{% static 'images/wide-20normal.svg' %}" alt="" /></a>
-                <div data-hover="true" data-delay="0" class="footer-language w-dropdown">
-                    <div class="language-toggle footer-language-toggle w-dropdown-toggle">
-                        <div class="language-toggle-text alternative">English</div>
-                        <div class="language-toggle-icon alternative"></div>
-                    </div>
-                    <nav class="language-toggle-list footer-language-toggle-list w-dropdown-list">
-                        <a href="/" aria-current="page" class="language-toggle-link w-dropdown-link w--current">English</a><a href="/ru/home" class="language-toggle-link w-dropdown-link">Русский</a><a href="/esp/home" class="language-toggle-link w-dropdown-link">Español</a>
-                    </nav>
-                </div>
+                <p>{{request.settings.hero_title}}</p>
             </div>
             <div id="w-node-e3b1643d-fa42-646c-909e-617bfd14e78f-6930bc34" class="footer-info">
                 <div id="w-node-e3b1643d-fa42-646c-909e-617bfd14e790-6930bc34" class="footer-links">

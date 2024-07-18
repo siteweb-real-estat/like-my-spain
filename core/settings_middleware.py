@@ -10,16 +10,26 @@ class SettingsMiddleware:
         request.settings = settings
         request.settings.phone_numbers= request.settings.phone_numbers.split(', ')
         request.CITY_CHOICES = [
-            ("Madrid", "Madrid"),
-            ("Barcelona", "Barcelona"),
-            ("Valencia", "Valencia"),
-            ("Seville", "Seville"),
-            ("Bilbao", "Bilbao"),
-            ("Malaga", "Malaga"),
-            ("Granada", "Granada"),
-            ("Alicante", "Alicante"),
-            ("Cordoba", "Cordoba"),
-            ("Zaragoza", "Zaragoza"),
+            ("Casablanca", "Casablanca"),
+            ("Rabat", "Rabat"),
+            ("Fes", "Fes"),
+            ("Marrakesh", "Marrakesh"),
+            ("Tangier", "Tangier"),
+            ("Agadir", "Agadir"),
+            ("Meknes", "Meknes"),
+            ("Oujda", "Oujda"),
+            ("Tetouan", "Tetouan"),
+            ("Kenitra", "Kenitra"),
+            ("Safi", "Safi"),
+            ("Nador", "Nador"),
+            ("Beni Mellal", "Beni Mellal"),
+            ("Taza", "Taza"),
+            ("Laayoune", "Laayoune"),
+            ("Dakhla", "Dakhla"),
+            ("Essaouira", "Essaouira"),
+            ("El Jadida", "El Jadida"),
+            ("Settat", "Settat"),
+            ("Mohammedia", "Mohammedia"),
         ]
 
         response = self.get_response(request)
