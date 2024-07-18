@@ -44,6 +44,35 @@
         input[type="submit"] {
             -webkit-appearance: none;
         }
+        
+        #google_translate_element {
+            padding: 1rem;
+        }
+        
+        .goog-te-gadget-simple {
+            display: flex !important;
+        }
+        
+        .goog-te-gadget-simple a {
+            display: flex;
+        }
+        
+        .goog-te-gadget-simple span span {
+            /* max-width: 0ch; */
+            overflow: hidden;
+        }
+        
+        .goog-te-gadget-simple {
+            white-space: nowrap;
+            border-radius: 5px;
+            font-weight: 500;
+            text-align: center;
+            border: 0;
+            color: white;
+            padding: 10px 22px !important;
+            display: flex !important;
+            align-items: center !important;
+        }
     </style>
 
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
@@ -65,7 +94,19 @@
                     <a href="/all-properties" class="navbar-link w-nav-link">All properties</a>
                     <a href="/about-us" class="navbar-link w-nav-link">About us</a>
                     <a href="/contacts" class="navbar-link w-nav-link">Contacts</a>
-                    <a href="#" class="button get-in-touch navbar-cta button-wide w-button">Get in touch</a></div>
+                    <a href="#" class="button get-in-touch navbar-cta button-wide w-button">Get in touch</a>
+                    <div id="google_translate_element"></div>
+                    <script type="text/javascript">
+                        function googleTranslateElementInit() {
+                            new google.translate.TranslateElement({
+                                pageLanguage: 'en',
+                                includedLanguages: 'ar,fr,en,es,de',
+                                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                            }, 'google_translate_element');
+                        }
+                    </script>
+                    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                </div>
             </nav>
             <div class="menu-button w-nav-button">
                 <div class="menu-close"></div>
