@@ -3,9 +3,9 @@ from .models import Booking, Property, Setting, Message, PropertyImage
 from unfold.admin import ModelAdmin, TabularInline
 from django.contrib.auth.models import Group, User
 
-admin.site.site_header = "Like My Spain"
-admin.site.site_title = "Like My Spain"
-admin.site.name = "Like My Spain"
+admin.site.site_header = "IMOSAKI"
+admin.site.site_title = "IMOSAKI"
+admin.site.name = "IMOSAKI"
 
 
 class PropertyImageInline(TabularInline):
