@@ -4,7 +4,7 @@ from django.conf import settings
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect, render, get_object_or_404
 from django.views.generic import TemplateView, ListView, DetailView
-from .models import Booking, Property, Setting, Message
+from .models import Booking, Partner, Property, Setting, Message
 from django.core import management
 
 class Home(ListView):
@@ -63,6 +63,11 @@ class PropertyListByCity(ListView):
 
 class AboutUs(TemplateView):
     template_name = "core/about-us.html"
+    
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context['partners'] = Partner.objects.all()
+        return context
 
 
 class Contacts(TemplateView):

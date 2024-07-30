@@ -1,11 +1,9 @@
 import os
 from pathlib import Path
 from django.core.management.utils import get_random_secret_key
-
-
-# import cloudinary.uploader
-# import cloudinary.api
-# import cloudinary
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -127,8 +125,6 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-MEDIA_ROOT = BASE_DIR / "media"
-MEDIA_URL = "/media/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -142,8 +138,8 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 CRISPY_TEMPLATE_PACK = "tailwind"
 
 
-# cloudinary.config(
-# cloud_name = "ddrsbovxs",
-# api_key = "175375413271139",
-# api_secret = "tNZv2PWalfYGCwQYk8BY1m3P9e0",
-# )
+cloudinary.config(
+    cloud_name = "da8ianyag", 
+    api_key = "691869819785937", 
+    api_secret = "NzyPyXceBZTP85M7r2pTWNqDD_4",
+)

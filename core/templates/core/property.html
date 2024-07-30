@@ -34,7 +34,7 @@
 {% block content %}
 
 
-<div id="main" style="background-image:url('/media/{{ property.images.first.image }}')" class="section-property-inner">
+<div id="main" style="background-image:url('{{ property.images.first.image.url }}')" class="section-property-inner">
     <div class="container upper inner-property-item w-container">
         <div class="section-property-inner-content">
             <div class="property-item-top-id inner">
@@ -90,11 +90,11 @@
                 <div id="gallery" class="property-data-gallery">
                     <h2 class="property-data-blocks-header">Gallery</h2>
                     <div class="property-gallery">
-                        <a href="#" id="w-node-a8f4e1eb-685a-3ecd-0069-6a7ab236e901-1b30bc56" style="background-image:url('/media/{{property.images.first.image}}')" class="lightbox-main w-inline-block w-lightbox">
+                        <a href="#" id="w-node-a8f4e1eb-685a-3ecd-0069-6a7ab236e901-1b30bc56" style="background-image:url('{{property.images.first.image.url}}')" class="lightbox-main w-inline-block w-lightbox">
                             <script type="application/json" class="w-json">
                                 {
                                     "items": [{
-                                        "url": "/media/{{property.images.first.image}}",
+                                        "url": "{{property.images.first.image.url}}",
                                         "type": "image"
                                     }],
                                     "group": "gallery"
@@ -107,11 +107,11 @@
 
                                 {% for image in property.images.all|slice:"1:" %}
                                 <div role="listitem" class="collection-item-gallery w-dyn-item w-dyn-repeater-item w-col w-col-6">
-                                    <a href="#" style="background-image:url(&quot;{{ image.image.url }}&quot;)" class="lightbox-gallery-item w-inline-block w-lightbox">
+                                    <a href="#" style="background-image:url('{{ image.image.url }}')" class="lightbox-gallery-item w-inline-block w-lightbox">
                                         <script type="application/json" class="w-json">
                                             {
                                                 "items": [{
-                                                    "url": "/media/{{ image.image }}",
+                                                    "url": "{{ image.image.url }}",
                                                     "type": "image"
                                                 }],
                                                 "group": "gallery"

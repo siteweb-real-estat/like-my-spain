@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Booking, Property, Setting, Message, PropertyImage
+from .models import Booking, Partner, Property, Setting, Message, PropertyImage
 from unfold.admin import ModelAdmin, TabularInline
 from django.contrib.auth.models import Group, User
 
@@ -12,6 +12,10 @@ class PropertyImageInline(TabularInline):
     model = PropertyImage
     extra = 1
 
+
+@admin.register(Partner)
+class PartnerAdmin(ModelAdmin):
+    list_display = ["name", "phone_number", "email"]
 
 @admin.register(Property)
 class PropertyAdmin(ModelAdmin):

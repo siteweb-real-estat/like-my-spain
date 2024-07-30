@@ -10,7 +10,7 @@
                 <div class="property-item-top-price-label">M.A.D</div>
                 <div class="property-item-top-price-value">{{ property.price }}</div>
             </div>
-            <div style="background-image:url('/media/{{ property.images.first.image }}')" class="property-item-top-thumbnail"></div>
+            <div style="background-image:url('{{ property.images.first.image.url }}')" class="property-item-top-thumbnail"></div>
         </div>
         <div class="property-item-info">
             <div class="property-item-info-location">

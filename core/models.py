@@ -1,4 +1,7 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
+import cloudinary.api
+import cloudinary.uploader
 
 PROPERTY_TYPE_CHOICES = [
     ("House", "House"),
@@ -60,9 +63,7 @@ class PropertyImage(models.Model):
     property = models.ForeignKey(
         Property, on_delete=models.CASCADE, related_name="images"
     )
-    image = models.ImageField(
-        upload_to="property_images/"
-    )  # Adjust upload path as needed
+    image = CloudinaryField(resource_type='image')
 
     def __str__(self):
         return f"Image for Property: {self.property.name}"
@@ -104,3 +105,11 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"{self.name} <{self.email}> booking for {self.property.name}"
+
+
+class Partner(models.Model):
+    image = CloudinaryField(resource_type='image')
+    name = models.CharField(max_length=64)
+    description = models.TextField()
+    phone_number = models.CharField(max_length=14)
+    email = models.CharField(max_length=14)
