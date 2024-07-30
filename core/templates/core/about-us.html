@@ -66,14 +66,14 @@
                 <p>Our team of experienced real estate professionals is dedicated to helping you find your dream home. With extensive knowledge of the Moroccan real estate market, we provide personalized service to meet your unique needs.</p>
                 <div class="offices-collection-list-wrapper w-dyn-list">
                     <div role="list" class="offices-collection-list w-dyn-items w-row">
-                        {% for partner in partners %}
+                        {% for member in members %}
                         <div role="listitem" class="offices-collection-item w-dyn-item w-col w-col-3">
                             <div class="office-item">
-                                <div style="background-image:url('{{partner.image.url}}')" class="office-thumbnail"></div>
-                                <div class="office-name">{{partner.name}}</div>
-                                <div class="office-description">{{partner.description}}</div>
-                                <a href="tel:{{partner.phone_number}}" class="office-phone">{{partner.phone_number}}</a>
-                                <a href="mailto:{{partner.email}}?subject=Request%20to%20the%20office" class="office-email">{{partner.email}}</a>
+                                <div style="background-image:url('{{member.image.url}}')" class="office-thumbnail"></div>
+                                <div class="office-name">{{member.name}}</div>
+                                <div class="office-description">{{member.description}}</div>
+                                <a href="tel:{{member.phone_number}}" class="office-phone">{{member.phone_number}}</a>
+                                <a href="mailto:{{member.email}}?subject=Request%20to%20the%20office" class="office-email">{{member.email}}</a>
                             </div>
                         </div>
                         {% endfor %}

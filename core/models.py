@@ -107,7 +107,7 @@ class Booking(models.Model):
         return f"{self.name} <{self.email}> booking for {self.property.name}"
 
 
-class Partner(models.Model):
+class Member(models.Model):
     image = CloudinaryField(resource_type='image')
     name = models.CharField(max_length=64)
     description = models.TextField()
