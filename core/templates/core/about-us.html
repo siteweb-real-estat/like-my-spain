@@ -28,9 +28,13 @@
     .about-us-features {
         margin-top: 0px;
     }
+    
+    .custom-section {
+        padding: 1.5rem;
+    }
 </style>
 
-<div class="section-about-us">
+<section class="section-about-us">
     <div class="container upper w-container">
         <div class="section-hero-content">
             <h1 class="hero-content-h1">About IMOSAKI REAL ESTATE</h1>
@@ -38,51 +42,46 @@
         </div>
     </div>
     <div class="background-overlay"></div>
-</div>
-<div class="section-about-us-content">
+</section>
+
+<section class="custom-section">
     <div class="container w-container">
-        <div class="w-layout-grid about-us-content">
-            <div id="w-node-d96eaf66-5549-de0d-f364-3cbaf502726d-7f30bc55" class="about-us-rich-content w-richtext">
-                <h2>Our Mission</h2>
-                <p>At IMOSAKI REAL ESTATE, our mission is to provide unparalleled real estate services that exceed our clients' expectations. We are committed to integrity, professionalism, and excellence in every transaction.</p>
-            </div>
-
-            <div id="w-node-_49c6da72-dfaf-c997-ab68-d51731b32c7a-7f30bc55" class="about-us-features">
-                {% include "partials/features_section.html" %}
-            </div>
-
-            <div id="w-node-_41d35a97-76ce-9188-4c24-77c8b1b743c5-7f30bc55" class="about-us-rich-content w-richtext">
-                <h2>General information</h2>
-                <p>Thus, consultation with a broad asset plays an important role in the formation of new proposals. Comrades! the implementation of the planned targets to a large extent determines the creation of a personnel training system that meets urgent
-                    needs.
-                    <br/><br/>It should not, however, be forgotten that the framework and place of training require the definition and clarification of participatory systems. We should not, however, forget that the constant information and propaganda
-                    support of our activity allows us to estimate the value of the development model. The significance of these problems is so obvious that the scope and place of personnel training makes it possible to assess the significance of further
-                    development directions. Comrades! The new model of organizational activity provides a wide range of (specialists) participation in the formation of significant financial and administrative conditions.</p>
-            </div>
-
-
-            <section id="w-node-_574e8cd1-a05d-77aa-4d91-a37e5ebe0b84-7f30bc55" class="offices">
-                <h2>Meet Our Teem</h2>
-                <p>Our team of experienced real estate professionals is dedicated to helping you find your dream home. With extensive knowledge of the Moroccan real estate market, we provide personalized service to meet your unique needs.</p>
-                <div class="offices-collection-list-wrapper w-dyn-list">
-                    <div role="list" class="offices-collection-list w-dyn-items w-row">
-                        {% for member in members %}
-                        <div role="listitem" class="offices-collection-item w-dyn-item w-col w-col-3">
-                            <div class="office-item">
-                                <div style="background-image:url('{{member.image.url}}')" class="office-thumbnail"></div>
-                                <div class="office-name">{{member.name}}</div>
-                                <div class="office-description">{{member.description}}</div>
-                                <a href="tel:{{member.phone_number}}" class="office-phone">{{member.phone_number}}</a>
-                                <a href="mailto:{{member.email}}?subject=Request%20to%20the%20office" class="office-email">{{member.email}}</a>
-                            </div>
-                        </div>
-                        {% endfor %}
-
-                    </div>
-                </div>
-                </s>
-        </div>
+        <h2>General information</h2>
+        <p>Welcome to IMOSAKI REAL ESTATE, your premier destination for luxury real estate in Morocco. With years of experience and a dedicated team of experts, we pride ourselves on delivering exceptional service and finding the perfect home for our clients.</p>
     </div>
-</div>
+</section>
 
+<section class="custom-section">
+    <div class="container w-container">
+        <h2 class="top-of-the-block-h2">Our Mission</h2>
+        <p>At IMOSAKI REAL ESTATE, our mission is to provide unparalleled real estate services that exceed our clients' expectations. We are committed to integrity, professionalism, and excellence in every transaction.</p>
+    </div>
+</section>
+
+{% include "partials/features_section.html" %}
+
+<section class="custom-section">
+    <div class="container w-container">
+        <section id="w-node-_574e8cd1-a05d-77aa-4d91-a37e5ebe0b84-7f30bc55" class="offices">
+            <h2>Meet Our Teem</h2>
+            <p>Our team of experienced real estate professionals is dedicated to helping you find your dream home. With extensive knowledge of the Moroccan real estate market, we provide personalized service to meet your unique needs.</p>
+            <div class="offices-collection-list-wrapper w-dyn-list">
+                <div role="list" class="offices-collection-list w-dyn-items w-row">
+                    {% for member in members %}
+                    <div role="listitem" class="offices-collection-item w-dyn-item w-col w-col-3">
+                        <div class="office-item">
+                            <div style="background-image:url('{{member.image.url}}')" class="office-thumbnail"></div>
+                            <div class="office-name">{{member.name}}</div>
+                            <div class="office-description">{{member.description}}</div>
+                            <a href="tel:{{member.phone_number}}" class="office-phone">{{member.phone_number}}</a>
+                            <a href="mailto:{{member.email}}?subject=Request%20to%20the%20office" class="office-email">{{member.email}}</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
 {% endblock %}
