@@ -117,9 +117,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-# Static files settings
-STATIC_URL = 'https://res.cloudinary.com/your-cloud-name/static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticCloudinaryStorage'
+STATIC_URL = "static/"
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
@@ -141,10 +143,3 @@ cloudinary.config(
     api_key = "691869819785937", 
     api_secret = "NzyPyXceBZTP85M7r2pTWNqDD_4",
 )
-
-# Cloudinary configuration
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'da8ianyag',
-    'API_KEY': '691869819785937',
-    'API_SECRET': 'NzyPyXceBZTP85M7r2pTWNqDD_4',
-}
