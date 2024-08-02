@@ -50,7 +50,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "core.settings_middleware.SettingsMiddleware",
-    'core.nocache_middleware.NoCacheMiddleware',
+    'core.nocache_middleware.DisableClientSideCachingMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 

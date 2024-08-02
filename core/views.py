@@ -6,15 +6,12 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.views.generic import TemplateView, ListView, DetailView
 from .models import Booking, Member, Property, Setting, Message
 from django.core import management
-from django.views.decorators.cache import never_cache
 
-@never_cache
 class Home(ListView):
     template_name = "core/index.html"
     model = Property
     context_object_name = "properties"
 
-@never_cache
 class PropertyDetailView(DetailView):
     template_name = 'core/property.html'
     model = Property
@@ -29,14 +26,13 @@ class PropertyDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context["properties"] = Property.objects.all()[:3]
         return context
-
-@never_cache
+    
 class AllProperties(ListView):
     template_name = "core/all-properties.html"
     model = Property
     context_object_name = "properties"
 
-@never_cache
+
 class PropertyListByType(ListView):
     template_name = "core/property_list_by_type.html"
     context_object_name = "properties"
@@ -50,7 +46,7 @@ class PropertyListByType(ListView):
         context["type"] = self.kwargs["type"]
         return context
 
-@never_cache
+
 class PropertyListByCity(ListView):
     template_name = "core/property_list_by_city.html"
     context_object_name = "properties"
@@ -64,7 +60,7 @@ class PropertyListByCity(ListView):
         context["city"] = self.kwargs["city"]
         return context
 
-@never_cache
+
 class AboutUs(TemplateView):
     template_name = "core/about-us.html"
     
@@ -73,7 +69,7 @@ class AboutUs(TemplateView):
         context['members'] = Member.objects.all()
         return context
 
-@never_cache
+
 class Contacts(TemplateView):
     template_name = "core/contacts.html"
 
