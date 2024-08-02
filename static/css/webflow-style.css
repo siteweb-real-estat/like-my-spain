@@ -2575,6 +2575,7 @@ p {
 .top-of-the-block {
     position: relative;
     margin-bottom: 48px;
+    text-align: center;
 }
 
 .top-of-the-block-h3 {
@@ -4699,9 +4700,11 @@ p {
     }
     .top-of-the-block-h2 {
         font-size: 26px;
+        text-align: center;
     }
     .top-of-the-block-h3 {
         font-size: 18px;
+        text-align: center;
     }
     .properties-list-wrapper {
         display: block;
@@ -4829,6 +4832,7 @@ p {
     }
     .top-of-the-block-h3 {
         font-size: 18px;
+        text-align: center;
     }
     .property-item-top-price-label {
         font-size: 24px;
@@ -11448,6 +11452,17 @@ p {
     }
 }
 
+.office-item {
+    background: #6495ed54;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: all ease-in 150ms;
+}
+
+.office-item:hover {
+    background-color: #6495ed8a;
+}
+
 .office-image {
     /* height: ; */
 }
@@ -11470,4 +11485,15 @@ p {
     height: 100%;
     object-fit: cover;
     object-position: 50% 50%;
+    border-radius: 8px;
+}
+
+.top-of-the-block,
+.top-of-the-block-h2,
+.top-of-the-block-h3 {
+    text-align: center !important;
+}
+
+.section-our-features {
+    margin-top: 32px !important;
 }

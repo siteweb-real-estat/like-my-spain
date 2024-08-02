@@ -2575,6 +2575,7 @@ p {
 .top-of-the-block {
     position: relative;
     margin-bottom: 48px;
+    text-align: center;
 }
 
 .top-of-the-block-h3 {
@@ -3914,21 +3915,23 @@ p {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
+    margin-top: 1rem;
 }
 
 .office-name {
-    margin-top: 24px;
+    margin-top: 16px;
+    font-weight: bold;
 }
 
 .office-description {
-    margin-top: 12px;
+    margin-top: 6px;
     color: #679;
     line-height: 150%;
 }
 
 .office-phone {
     display: block;
-    margin-top: 24px;
+    margin-top: 6px;
     color: #3d475c;
     text-decoration: none;
 }
@@ -3939,7 +3942,7 @@ p {
 
 .office-email {
     display: block;
-    margin-top: 12px;
+    margin-top: 6px;
     color: #3d475c;
     text-decoration: none;
 }
@@ -4393,6 +4396,8 @@ p {
         margin-left: 24px;
         -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+        /* RYS */
+        text-align: center;
     }
     .button.get-in-touch.navbar-cta.button-wide {
         margin-top: 24px;
@@ -4533,6 +4538,7 @@ p {
     }
     .office-item {
         margin-bottom: 36px;
+        /* text-align: ce; */
     }
     .offices-collection-item {
         width: 50%;
@@ -4694,9 +4700,11 @@ p {
     }
     .top-of-the-block-h2 {
         font-size: 26px;
+        text-align: center;
     }
     .top-of-the-block-h3 {
         font-size: 18px;
+        text-align: center;
     }
     .properties-list-wrapper {
         display: block;
@@ -4714,6 +4722,8 @@ p {
     }
     .feature-item-header {
         font-size: 18px;
+        /* RYS */
+        text-align: center;
     }
     .button.button-alternate.button-block-more {
         display: none;
@@ -4822,6 +4832,7 @@ p {
     }
     .top-of-the-block-h3 {
         font-size: 18px;
+        text-align: center;
     }
     .property-item-top-price-label {
         font-size: 24px;
@@ -11441,6 +11452,48 @@ p {
     }
 }
 
+.office-item {
+    background: #6495ed54;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: all ease-in 150ms;
+}
+
+.office-item:hover {
+    background-color: #6495ed8a;
+}
+
 .office-image {
-    /* width: ; */
+    /* height: ; */
+}
+
+.square {
+    position: relative;
+    /* width: 80%;
+    margin: 0 auto; */
+}
+
+.square::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.square img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: 8px;
+}
+
+.top-of-the-block,
+.top-of-the-block-h2,
+.top-of-the-block-h3 {
+    text-align: center !important;
+}
+
+.section-our-features {
+    margin-top: 32px !important;
 }

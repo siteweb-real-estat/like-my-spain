@@ -1,4 +1,4 @@
- {% extends 'core/base.html' %}
+ {% extends 'core/base.html' %} {% load static %}
 <!--  -->
 {% block wf_page %}5d248c622758ae787f30bc55{% endblock %}
 <!--  -->
@@ -32,6 +32,73 @@
     .custom-section {
         padding: 1.5rem;
     }
+    
+    .custom-section h2,
+    .custom-section h3 {
+        text-align: center;
+    }
+    
+    .about-container {
+        display: flex;
+        position: relative;
+        padding: 0 4rem;
+        /* Ensure this container is positioned relative to help with the fixed image */
+    }
+    
+    .about-container_image {
+        width: 20%;
+    }
+    
+    .about-container_image img {
+        width: 100%;
+        /* Ensure the image fills the container */
+        height: auto;
+        /* Maintain the aspect ratio of the image */
+        display: block;
+        /* Remove any extra space below the image */
+    }
+    
+    .about-container_content {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+        justify-items: center;
+        padding: 2rem 0;
+        font-size: large;
+    }
+    
+    @media (max-width: 768px) {
+        /* Adjust the breakpoint as needed for tablets */
+        .about-container {
+            display: block;
+            padding: 0;
+        }
+        .about-container_image {
+            position: relative;
+            /* Change to relative for stacking layout */
+            width: 100%;
+            /* Full width for mobile */
+            height: auto;
+            /* Adjust height based on content */
+            margin-bottom: 20px;
+            /* Space between image and content */
+        }
+        .about-container_image img {
+            width: 100%;
+            height: auto;
+        }
+        .about-container_content {
+            margin-left: 0;
+            width: 100%;
+            padding-top: 0;
+        }
+    }
+    
+    .sr-only {
+        display: none;
+    }
 </style>
 
 <section class="section-about-us">
@@ -44,19 +111,27 @@
     <div class="background-overlay"></div>
 </section>
 
-<section class="custom-section">
-    <div class="container w-container">
-        <h2>General information</h2>
-        <p>Welcome to IMOSAKI REAL ESTATE, your premier destination for luxury real estate in Morocco. With years of experience and a dedicated team of experts, we pride ourselves on delivering exceptional service and finding the perfect home for our clients.</p>
+<div class="about-container">
+    <div class="about-container_image">
+        <img src="{% static 'images/imosaki.webp' %}" alt="">
     </div>
-</section>
+    <div class="about-container_content">
+        <section class="custom-section">
+            <div class="container w-container">
+                <h2 class="sr-only">General information</h2>
+                <p>Welcome to IMOSAKI REAL ESTATE, your premier destination for luxury real estate in Morocco. With years of experience and a dedicated team of experts, we pride ourselves on delivering exceptional service and finding the perfect home for
+                    our clients.</p>
+            </div>
+        </section>
 
-<section class="custom-section">
-    <div class="container w-container">
-        <h2 class="top-of-the-block-h2">Our Mission</h2>
-        <p>At IMOSAKI REAL ESTATE, our mission is to provide unparalleled real estate services that exceed our clients' expectations. We are committed to integrity, professionalism, and excellence in every transaction.</p>
+        <section class="custom-section">
+            <div class="container w-container">
+                <h2 class="top-of-the-block-h2 sr-only">Our Mission</h2>
+                <p>At IMOSAKI REAL ESTATE, our mission is to provide unparalleled real estate services that exceed our clients' expectations. We are committed to integrity, professionalism, and excellence in every transaction.</p>
+            </div>
+        </section>
     </div>
-</section>
+</div>
 
 {% include "partials/features_section.html" %}
 
@@ -87,4 +162,5 @@
         </section>
     </div>
 </section>
+
 {% endblock %}
