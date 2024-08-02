@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "crispy_tailwind",
     "core",
 ]
+WHITENOISE_MAX_AGE = 0
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
