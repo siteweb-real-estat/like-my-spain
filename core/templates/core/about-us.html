@@ -70,8 +70,11 @@
                     {% for member in members %}
                     <div role="listitem" class="offices-collection-item w-dyn-item w-col w-col-3">
                         <div class="office-item">
-                            <div style="background-image:url('{{member.image.url}}')" class="office-thumbnail"></div>
-                            <div class="office-name">{{member.name}}</div>
+                            <div class="square">
+                                <img class="office-image" src="{{member.image.url}}" alt="{{member.name}}">
+
+                            </div>
+                            <div class="office-name">{{member.name|title}}</div>
                             <div class="office-description">{{member.description}}</div>
                             <a href="tel:{{member.phone_number}}" class="office-phone">{{member.phone_number}}</a>
                             <a href="mailto:{{member.email}}?subject=Request%20to%20the%20office" class="office-email">{{member.email}}</a>

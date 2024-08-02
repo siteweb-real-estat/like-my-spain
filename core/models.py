@@ -112,4 +112,4 @@ class Member(models.Model):
     name = models.CharField(max_length=64)
     description = models.TextField()
     phone_number = models.CharField(max_length=14)
-    email = models.CharField(max_length=14)
+    email = models.CharField(max_length=20)

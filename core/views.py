@@ -119,3 +119,8 @@ def download_backup(request):
 
 # def handler404(request, *args, **argv):
 #     return render(request, 'core/404.html', {})
+    
+def custom_404_view(request, exception=None):
+    return render(request, '404.html', status=404)
+def custom_500_view(request, exception=None):
+    return render(request, '500.html', status=404)

@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 
 app_name = "core"
@@ -14,4 +14,5 @@ urlpatterns = [
     path("type/<type>/", views.PropertyListByType.as_view(), name="property_type"),
     path("city/<str:city>/", views.PropertyListByCity.as_view(), name="property_city"),
     path('download-backup/', views.download_backup, name='download_backup'),
+    # re_path(r'^.*$', views.custom_404_view, name='custom_404'),
 ]

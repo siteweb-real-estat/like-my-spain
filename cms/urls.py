@@ -10,3 +10,5 @@ urlpatterns = [
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+handler404 = 'core.views.custom_404_view'
+handler500 = 'core.views.custom_500_view'
